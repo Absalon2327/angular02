@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
+import { NotFoundComponent } from './modules/home/pages/not-found/not-found.component';
 
 //Matriz de objetos para las rutas.
 const routes: Routes = [
@@ -9,9 +10,12 @@ const routes: Routes = [
     path: ``,
     component: SkeletonComponent,
     children : [
-      {path: '', loadChildren: () => import('@modules/home/home.module').then(m => m.HomeModule)}
+      {path: '', loadChildren: () => import('@modules/home/home.module').then(m => m.HomeModule)},
+      {path: 'directivas', loadChildren: () => import('@modules/directivas/directivas.module').then(m => m.DirectivasModule)}
     ]
-  }
+  },
+  //{path:'**', redirectTo:'',pathMatch:'full'}
+   {path:'**', component:NotFoundComponent}
 ];
 
 @NgModule({

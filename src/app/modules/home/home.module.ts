@@ -5,11 +5,13 @@ import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
 import { DetalleComponent } from './pages/detalle/detalle.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    DetalleComponent
+    DetalleComponent,
+    NotFoundComponent
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule]
 })

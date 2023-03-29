@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MODULO1, MODULO2, MODULO3 } from '../../../../constants/constants';
 
 @Component({
   selector: 'app-detalle',
   templateUrl: './detalle.component.html',
-  styleUrls: ['./detalle.component.scss']
+  styleUrls: ['./detalle.component.scss'],
 })
-export class DetalleComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class DetalleComponent {
+  modulo1: string = MODULO1;
+  modulo2: string = MODULO2;
+  modulo3: string = MODULO3;
 }
