@@ -11,7 +11,8 @@ const routes: Routes = [
     component: SkeletonComponent,
     children : [
       {path: '', loadChildren: () => import('@modules/home/home.module').then(m => m.HomeModule)},
-      {path: 'directivas', loadChildren: () => import('@modules/directivas/directivas.module').then(m => m.DirectivasModule)}
+      {path: 'directivas', loadChildren: () => import('@modules/directivas/directivas.module').then(m => m.DirectivasModule)},
+      {path: 'mascotas', loadChildren: () => import('@modules/mascotas/mascotas.module').then(m => m.MascotasModule)}
     ]
   },
   //{path:'**', redirectTo:'',pathMatch:'full'}

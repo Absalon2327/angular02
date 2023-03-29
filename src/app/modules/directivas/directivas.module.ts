@@ -5,15 +5,25 @@ import { DirectivasRoutingModule } from './directivas-routing.module';
 import { NgIFComponent } from './pages/ng-if/ng-if.component';
 import { NgSwitchComponent } from './pages/ng-switch/ng-switch.component';
 import { BindingComponent } from './pages/binding/binding.component';
+import { NgStyleComponent } from './pages/ng-style/ng-style.component';
+import { NgClassComponent } from './pages/ng-class/ng-class.component';
+import { NgModelComponent } from './pages/ng-model/ng-model.component';
+import { FormsModule } from '@angular/forms';
+import { NgForComponent } from './pages/ng-for/ng-for.component';
 
 
 @NgModule({
   declarations: [
     NgIFComponent,
     NgSwitchComponent,
-    BindingComponent
+    BindingComponent,
+    NgStyleComponent,
+    NgClassComponent,
+    NgModelComponent,
+    NgForComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     DirectivasRoutingModule
   ]
