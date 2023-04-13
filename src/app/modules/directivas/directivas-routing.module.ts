@@ -6,6 +6,7 @@ import { BindingComponent } from './pages/binding/binding.component';
 import { NgStyleComponent } from './pages/ng-style/ng-style.component';
 import { NgClassComponent } from './pages/ng-class/ng-class.component';
 import { NgModelComponent } from './pages/ng-model/ng-model.component';
+import { NgSwitchComponent } from './pages/ng-switch/ng-switch.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'binding', component: BindingComponent, title: 'BinDing' },
   { path: 'ngStyle', component: NgStyleComponent, title: 'NgStyle' },
   { path: 'ngClass', component: NgClassComponent, title: 'NgClass' },
-  { path: 'ngModel', component: NgModelComponent, title: 'NgModel' }
+  { path: 'ngModel', component: NgModelComponent, title: 'NgModel' },
+  { path: 'ngSwitch', component: NgSwitchComponent, title: 'NgSwitch' }
 ];
 
 @NgModule({
