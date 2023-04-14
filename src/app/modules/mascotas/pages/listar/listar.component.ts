@@ -25,6 +25,27 @@ export class ListarComponent implements OnInit {
     });
   }
 
+  estraerAll() {
+    // obtener por consola
+    this.mascotasService.obtenerAll().then(async (resp: IMascota[]) => {
+      console.log(resp);
+      //repaso insentando datos de mascotas desde el archivo json
+      resp.forEach((obj) => {
+        this.mascotasP.push(obj);
+        this.datosM.push(JSON.stringify(obj));
+      });
+      let jsonArray = JSON.parse(this.datosM[0]);
+      for (const key in jsonArray) {
+        console.log('llave', key, jsonArray[key]);
+      }
+
+      const { raza, des, ...datos } = jsonArray; //destructurando el json
+      //console.log(des);
+
+      const [obj1, obj2, obj3, ...losOtros] = resp; //destructurando el arreglo
+    });
+  }
+
   buscar(): void {
     //método para buscar
   }

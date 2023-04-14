@@ -49,6 +49,18 @@ export class MascotasserviceService {
     }
   }
 
+  //con promesa
+  public obtenerById(id:string):any{
+
+    return new Promise(resolve=>{
+      return this.httpClient.get<IMascota>(`${this.baseURL}/${id}`)
+      .subscribe(data=>{
+        resolve(data);
+      });
+    });
+
+}
+
   eliminarMascotaByID(id: string): Observable<IMascota> {
     if (id.length >= 1) {
       console.log('id recibido', id);

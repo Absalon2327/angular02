@@ -22,7 +22,6 @@ export class MascotaComponent implements OnInit {
   ngOnInit(): void {
     //como devuelve un observable
     //witchMap, operador de transformación
-
     this.buscarMascotaID();
     this.eliminarMascota();
   }
@@ -78,5 +77,24 @@ export class MascotaComponent implements OnInit {
   regresar() {
     //pra ir a la ruta indicada
     this.router.navigate(['mascotas/listar']);
+  }
+
+  getMascota():void{//obtine los datos de la mascota por id por consola
+    const id= this.activatedRoute.snapshot.paramMap.get('id');
+    this.mascotaService.buscarMascotaByID(id || '').subscribe(resp=>console.log(resp))
+    /*this.mascotaService.mascotaById(id || '').subscribe((resp:IMascota)=>{
+      this.mascota=resp;
+    });*/
+  }
+
+  getMascotaPromesaById():void{//obtine los datos de la mascota por id promesa
+    const id= this.activatedRoute.snapshot.paramMap.get('id');
+    this.mascotaService.obtenerById(id || '').then(async(mascota:IMascota)=>{
+    console.log("El response de la promesa",mascota);
+    });
+    /*this.mascotaService.obtenerById(id || '').then(async(mascota:IMascota)=>{
+      console.log("Resultado de la promesa");
+      this.mascota=mascota;
+      });*/
   }
 }
